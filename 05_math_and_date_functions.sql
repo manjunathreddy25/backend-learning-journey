@@ -1,5 +1,5 @@
-create database day_5;
-use day_5;
+create database math_and_date_functions;
+use math_and_date_functions;
 CREATE TABLE anime_characters_staff (
     employee_id INT,
     character_name VARCHAR(50),

@@ -1,5 +1,5 @@
-create database day_7;
-use day_7;
+create database group_by_and_having;
+use group_by_and_having;
 CREATE TABLE Employees_7 (
     EmpID INT PRIMARY KEY,
     EmpName VARCHAR(50),

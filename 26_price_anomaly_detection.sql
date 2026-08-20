@@ -16,8 +16,8 @@
 -- @backend guys 
 
 -- **************************************************************************************
-create database day_26;
-use day_26;
+create database price_anomaly_detection;
+use price_anomaly_detection;
 CREATE TABLE product_price_history_26 (
     price_history_id INT AUTO_INCREMENT PRIMARY KEY,
     product_id INT NOT NULL,

@@ -1,5 +1,5 @@
-create database day_19;
-use day_19;
+create database database_triggers_and_auditing;
+use database_triggers_and_auditing;
 
 
 -- ==========================================================================================================================================================================

@@ -1,5 +1,5 @@
-create database day_30;
-use day_30;
+create database hr_attendance_and_overtime_payroll;
+use hr_attendance_and_overtime_payroll;
 -- *****************************************************************************
 -- HR, Attendance & Payroll
 -- Assume:employees, attendance_logs, shifts, salary_revisions, departments

@@ -17,8 +17,8 @@
 -- @backend guys 
 
 -- ********************************************************************************************************
-create database day_25;
-use day_25;
+create database promotion_impact_and_revenue_analysis;
+use promotion_impact_and_revenue_analysis;
 CREATE TABLE promotions_25 (
     promotion_id INT PRIMARY KEY,
     promotion_name VARCHAR(100) NOT NULL,

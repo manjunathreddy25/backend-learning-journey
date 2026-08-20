@@ -1,5 +1,5 @@
-create database day_15;
-use day_15;
+create database sql_views;
+use sql_views;
 
 -- ========================================================
 -- Views

@@ -1,5 +1,5 @@
-create database day_20;
-use day_20;
+create database transactions_and_savepoints;
+use transactions_and_savepoints;
 
 -- ==========================================================================================================================================================================
 -- 

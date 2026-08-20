@@ -1,5 +1,5 @@
-create database day_4;
-use day_4;
+create database data_modification_and_string_functions;
+use data_modification_and_string_functions;
 
 
 CREATE TABLE Employees (

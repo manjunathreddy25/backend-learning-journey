@@ -1,5 +1,5 @@
-create database day_9;
- use day_9;
+create database outer_cross_and_self_joins;
+ use outer_cross_and_self_joins;
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 CREATE TABLE managers (

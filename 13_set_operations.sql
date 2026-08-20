@@ -1,5 +1,5 @@
-create database day_13;
-use day_13;
+create database set_operations;
+use set_operations;
 
 CREATE TABLE erangel_players (
     player_id INT,

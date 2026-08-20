@@ -1,5 +1,5 @@
-create database day_28;
-use day_28;
+create database ledger_balance_reconciliation;
+use ledger_balance_reconciliation;
 -- *****************************************************************************************************************************************************************************
 -- Ledger vs Balance Reconciliation
 -- Assume accounts(current_balance) and transactions(account_id, amount, type, txn_date).

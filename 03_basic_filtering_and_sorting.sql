@@ -1,5 +1,5 @@
-create database day_3;
-use day_3;
+create database basic_filtering_and_sorting;
+use basic_filtering_and_sorting;
 CREATE TABLE Employees (
     EmployeeName VARCHAR(100),
     EmployeeID INT PRIMARY KEY,

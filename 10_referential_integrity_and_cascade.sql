@@ -1,5 +1,5 @@
-create database day_10;
-use day_10;
+create database referential_integrity_and_cascade;
+use referential_integrity_and_cascade;
 
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

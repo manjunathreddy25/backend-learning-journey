@@ -1,5 +1,5 @@
-create database day_31;
-use day_31;
+create database salary_revisions_and_pay_parity;
+use salary_revisions_and_pay_parity;
 -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 -- Salary Revisions & Pay Parity
 -- salary_revisions(emp_id, effective_from, ctc, grade).

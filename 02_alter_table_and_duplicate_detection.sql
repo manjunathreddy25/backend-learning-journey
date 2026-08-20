@@ -1,5 +1,5 @@
-create database day_2;
-use day_2;
+create database alter_table_and_duplicate_detection;
+use alter_table_and_duplicate_detection;
 CREATE TABLE TeamMembers (
     ID INT AUTO_INCREMENT PRIMARY KEY,
     EmployeeName VARCHAR(100),

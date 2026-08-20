@@ -1,5 +1,5 @@
-create database day_12;
-use day_12;
+create database subqueries_and_correlated_subqueries;
+use subqueries_and_correlated_subqueries;
 
 -- ===========================================================================================================================================================================
 -- CREATE TABLES

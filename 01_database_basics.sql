@@ -1,3 +1,3 @@
-create database day_1;
-use day_1;
+create database database_basics;
+use database_basics;
 show databases;

@@ -1,5 +1,5 @@
-create database day_8;
-use day_8;
+create database foreign_keys_and_inner_joins;
+use foreign_keys_and_inner_joins;
   -- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   
   -- Create Department Table

@@ -15,8 +15,8 @@
 -- Concepts: self-joins, time window logic, grouping by card/time, window functions.
 
 -- *************************************************************************************************************************************************************************
-create database day_27;
-use day_27;
+create database banking_fraud_detection;
+use banking_fraud_detection;
 CREATE TABLE cities_27 (
     city_id INT PRIMARY KEY,
     city_name VARCHAR(100) NOT NULL,

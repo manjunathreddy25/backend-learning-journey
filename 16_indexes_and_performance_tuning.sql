@@ -1,5 +1,5 @@
-create database day_16;
-use day_16;
+create database indexes_and_performance_tuning;
+use indexes_and_performance_tuning;
 CREATE TABLE orders (
     order_id INT PRIMARY KEY,
     customer_name VARCHAR(50),

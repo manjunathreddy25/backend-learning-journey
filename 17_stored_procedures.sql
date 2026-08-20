@@ -1,5 +1,5 @@
-create database day_17;
-use day_17;
+create database stored_procedures;
+use stored_procedures;
 -- =========================================================================================================================================================================
 -- CRUD Procedures
 CREATE TABLE patients(

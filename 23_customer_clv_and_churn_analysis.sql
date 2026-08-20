@@ -1,5 +1,5 @@
-create database day_23;
-use day_23;
+create database customer_clv_and_churn_analysis;
+use customer_clv_and_churn_analysis;
 
 -- **************************************************************************************************************************************************************************
 -- Customer Lifetime Value (CLV) & Churn Analysis.

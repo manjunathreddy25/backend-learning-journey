@@ -1,5 +1,5 @@
-create database day_18;
-use day_18;
+create database user_defined_functions;
+use user_defined_functions;
 -- ==========================================================================================================================================================================
 
 CREATE TABLE ai_projects (

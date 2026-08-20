@@ -19,8 +19,8 @@
 -- @backend guys 
 
 -- *****************************************************************************************
-create database day_24;
-use day_24;
+create database inventory_reorder_and_stock_health;
+use inventory_reorder_and_stock_health;
 -- Create Products
 CREATE TABLE products_24 (
     product_id INT PRIMARY KEY,

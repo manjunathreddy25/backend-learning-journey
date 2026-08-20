@@ -1,5 +1,5 @@
-create database day_22;
-use day_22;
+create database ecommerce_cart_funnel_analysis;
+use ecommerce_cart_funnel_analysis;
 
 -- ***************************************************************************************************************************************************************************
 -- E-Commerce Platform

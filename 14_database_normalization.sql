@@ -1,5 +1,5 @@
-create database day_14;
-use day_14;
+create database database_normalization;
+use database_normalization;
 
 -- 1NF  
 -- Each column should contain only one value.

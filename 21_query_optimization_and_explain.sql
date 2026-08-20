@@ -1,5 +1,5 @@
-create database day_21;
-use day_21;
+create database query_optimization_and_explain;
+use query_optimization_and_explain;
 
 -- ***************************************************************************************************************************************************************************
 
