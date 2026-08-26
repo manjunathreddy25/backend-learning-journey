@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Even_or_Odd.Run();
+            //Even_or_Odd.Run();
+            Pass_or_Fail.Run();
         }
     }
     class Even_or_Odd
@@ -23,6 +24,23 @@
                 Console.WriteLine("Odd");
             }
             Console.ReadKey();
+        }
+    }
+    class Pass_or_Fail
+    {
+        public static void Run()
+        {
+            Console.Write("Enter your marks out of 100: ");
+            int marks = Convert.ToInt32(Console.ReadLine());
+
+            if (marks >= 40)
+            {
+                Console.WriteLine("Pass");
+            }
+            else
+            {
+                Console.WriteLine("Fail");
+            }
         }
     }
 }
