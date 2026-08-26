@@ -7,7 +7,7 @@ namespace MyApp
     {
         static void Main(string[] args)
         {
-             //VariablesAndDataTypes.Run();
+             // VariablesAndDataTypes.Run();
             //TypeConversion.Run();
            //MarksTask.Run();
         }

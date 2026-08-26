@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Operators_Conditions": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
