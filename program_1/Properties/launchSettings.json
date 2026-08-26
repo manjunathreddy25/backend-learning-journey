@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "program_1": {
+      "commandName": "Project",
+      "debugEngines": "managed,native"
+    }
+  }
+}
