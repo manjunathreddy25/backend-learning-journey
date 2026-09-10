@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Files_Folders_Paths": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

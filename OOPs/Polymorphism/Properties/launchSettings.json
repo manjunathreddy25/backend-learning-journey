@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Polymorphism": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

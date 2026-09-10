@@ -6,7 +6,7 @@ namespace Methods
     {
         public static void Main(string[] args)
         {
-            //Calculator_using_methods();
+            Calculator_using_methods();
            //max_of_3_numbers.max_number();
         }
 

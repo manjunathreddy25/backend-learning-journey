@@ -62,7 +62,7 @@ namespace Strings_DateTime
 
             Console.WriteLine();
             Console.WriteLine($"Specific Date:{dob}");
-            Console.WriteLine($"Year:{ dob.Year});
+            Console.WriteLine($"Year:{dob.Year}");
             Console.WriteLine($"Month:{dob.Month}");
             Console.WriteLine($"Day:{dob.Day}");
 
@@ -82,7 +82,7 @@ namespace Strings_DateTime
 
 
             // Tasks
-            //Validate_Email.Run();
+            Validate_Email.Run();
             //Calculate_Age.Run();
         }
     }

@@ -31,7 +31,7 @@ namespace OOPs
             }
             set
             {
-                if (!string.IsNullOrWhiteSpace(value))
+                if (!string.IsNullOrWhiteSpace(value) && value.All(c => char.IsLetter(c) || c == ' '))
                 {
                     name = value;
                 }
@@ -72,4 +72,6 @@ namespace OOPs
             }
         }
     }
+
+
 }

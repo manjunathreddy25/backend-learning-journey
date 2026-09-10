@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="OOPs/Abstraction/Abstraction.csproj" />
+  <Project Path="OOPs/Inheritance/Inheritance.csproj" />
+  <Project Path="OOPs/Interface/Interface.csproj" />
+  <Project Path="OOPs/Payment_System/Payment_System.csproj" />
+  <Project Path="OOPs/Polymorphism/Polymorphism.csproj" />
+</Solution>

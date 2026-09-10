@@ -7,7 +7,7 @@ namespace Arrays_and_Collections
     {
         public static void Main(String[] args)
         {
-            //Storing_Employees.Employees();
+            Storing_Employees.Employees();
 
             //Arrays.Run();
             //Lists.Run();

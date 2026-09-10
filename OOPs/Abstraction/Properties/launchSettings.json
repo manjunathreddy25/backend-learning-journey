@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Abstraction": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
