@@ -1,6 +1,7 @@
+using ASP_DotNetCore_TASKS.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MyFirstApi.Controllers
+namespace ASP_DotNetCore_TASKS.Controllers
 {
     [ApiController]
     [Route("[controller]")]

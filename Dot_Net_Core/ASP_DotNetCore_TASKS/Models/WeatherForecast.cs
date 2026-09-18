@@ -1,4 +1,4 @@
-namespace MyFirstApi
+namespace ASP_DotNetCore_TASKS.Models
 {
     public class WeatherForecast
     {

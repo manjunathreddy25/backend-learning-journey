@@ -9,14 +9,14 @@ class Program
         //Program.try_catch_finally();
         //Program.exception_errors();
         //Divide_By_Zero.Run();
-        try
-        {
-            Custom_Exception.AgeValidator();
-        }
-        catch (InvalidAgeException e)
-        {
-            Console.WriteLine(e.Message);
-        }
+        //try
+        //{
+        //    Custom_Exception.AgeValidator();
+        //}
+        //catch (InvalidAgeException e)
+        //{
+        //    Console.WriteLine(e.Message);
+        //}
     }
     public static void Error()
     {

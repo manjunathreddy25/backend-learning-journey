@@ -1,0 +1,6 @@
+@ASP_DotNetCore_TASKS_HostAddress = http://localhost:5054
+
+GET {{ASP_DotNetCore_TASKS_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
