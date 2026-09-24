@@ -11,18 +11,81 @@ namespace ASP_DotNetCore_TASKS.Controllers
         private readonly IOrderService _orderService;
         private readonly IOrderCreateService _orderCreateService;
         private readonly IOrderUpdateService _orderUpdateService;
-
+        private readonly IConfiguration _configuration;
+        private readonly ILogger<OrderController> _logger;
         public OrderController(
             IOrderService orderService,
             IOrderCreateService orderCreateService,
-            IOrderUpdateService orderUpdateService)
+            IOrderUpdateService orderUpdateService,
+            IConfiguration configuration,
+            ILogger<OrderController> logger)
         {
             _orderService = orderService;
             _orderCreateService = orderCreateService;
             _orderUpdateService = orderUpdateService;
+            _configuration = configuration;
+            _logger = logger;
+        } 
+        // =========================
+        // appsettings.json
+        // =========================
+        [HttpGet("config")]
+        public IActionResult TestConfig()
+        {
+            string companyName =
+                _configuration["AppSettings:CompanyName"];
+
+            string applicationName =
+                _configuration["AppSettings:ApplicationName"];
+
+            int maxOrderLimit =
+                int.Parse(_configuration["AppSettings:MaxOrderLimit"]);
+
+            return Ok(new
+            {
+                companyName,
+                applicationName,
+                maxOrderLimit
+            });
         }
+        // =========================
+        // ilogger
+        // =========================
+        [HttpGet("ilogger/{id}")]
+        public IActionResult GetOrderWithLogger(int id)
+        {
+            try
+            {
+                _logger.LogInformation(
+                    "Getting order with ID: {id}",
+                    id
+                );
 
+                var order = _orderService.GetOrderById(id);
 
+                if (order == null)
+                {
+                    _logger.LogWarning(
+                        "Order with ID {id} was not found",
+                        id
+                    );
+
+                    return NotFound();
+                }
+
+                return Ok(order);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(
+                    ex,
+                    "Error occurred while getting order with ID {id}",
+                    id
+                );
+
+                return StatusCode(500, "Something went wrong.");
+            }
+        }
         // =========================
         // GET → SCOPED
         // =========================
@@ -50,6 +113,7 @@ namespace ASP_DotNetCore_TASKS.Controllers
                 instanceId2 = instanceId2,
                 instanceId3 = instanceId3
             });
+
         }
 
 
