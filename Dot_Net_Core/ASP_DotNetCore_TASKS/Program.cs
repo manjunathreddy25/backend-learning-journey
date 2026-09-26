@@ -1,7 +1,30 @@
+using ASP_DotNetCore_TASKS.Middleware;
 using ASP_DotNetCore_TASKS.Services;
+using ASP_DotNetCore_TASKS.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add MYSQL Connection
+var orderConnection =
+    builder.Configuration.GetConnectionString("OrderConnection");
+
+var migrationConnection =
+    builder.Configuration.GetConnectionString("Migration_DBConnection");
+
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseMySql(
+        orderConnection,
+        ServerVersion.AutoDetect(orderConnection)
+    ));
+
+
+builder.Services.AddDbContext<MigrationDbContext>(options =>
+    options.UseMySql(
+        migrationConnection,
+        ServerVersion.AutoDetect(migrationConnection)
+    ));
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -23,6 +46,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseMiddleware<RequestTimeMiddleware>();
 
 app.UseAuthorization();
 

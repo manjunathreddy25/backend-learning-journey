@@ -1,4 +1,5 @@
-﻿using ASP_DotNetCore_TASKS.Models;
+﻿using ASP_DotNetCore_TASKS.Data;
+using ASP_DotNetCore_TASKS.Models;
 using ASP_DotNetCore_TASKS.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,19 +14,65 @@ namespace ASP_DotNetCore_TASKS.Controllers
         private readonly IOrderUpdateService _orderUpdateService;
         private readonly IConfiguration _configuration;
         private readonly ILogger<OrderController> _logger;
+        private readonly AppDbContext _context;
+
+        private readonly MigrationDbContext _MigrationContext;
+
         public OrderController(
             IOrderService orderService,
             IOrderCreateService orderCreateService,
             IOrderUpdateService orderUpdateService,
             IConfiguration configuration,
-            ILogger<OrderController> logger)
+            ILogger<OrderController> logger,
+            AppDbContext context,
+            MigrationDbContext migrationContext)
         {
             _orderService = orderService;
             _orderCreateService = orderCreateService;
             _orderUpdateService = orderUpdateService;
             _configuration = configuration;
             _logger = logger;
-        } 
+            _context = context;
+            _MigrationContext = migrationContext;
+        }
+        // =========================
+        // Mysql Database Migration Connnection
+        // =========================
+        [HttpPost("createorders")]
+        public IActionResult CreateOrders(Order order)
+        {
+            _MigrationContext.MigrationOrders.Add(order);
+            _MigrationContext.SaveChanges();
+
+            return Ok(order);
+        }
+        [HttpGet("getmigrationdata/{id}")]
+        public IActionResult GetMigrationOrders(int id)
+        {
+            var order = _MigrationContext.MigrationOrders.FirstOrDefault(o => o.Id == id);
+
+            if (order == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(order);
+        }
+        // =========================
+        // Mysql Database Connnection
+        // =========================
+        [HttpGet("mysql/{id}")]
+        public IActionResult GetOrdersFromMysql(int id)
+        {
+            var order = _context.Orders.FirstOrDefault(o => o.Id == id);
+
+            if (order == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(order);
+        }
         // =========================
         // appsettings.json
         // =========================
