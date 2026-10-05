@@ -1,4 +1,5 @@
-﻿using ASP_DotNetCore_TASKS.Models;
+﻿using ASP_DotNetCore_TASKS.Exceptions;
+using ASP_DotNetCore_TASKS.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ASP_DotNetCore_TASKS.Controllers
@@ -7,6 +8,18 @@ namespace ASP_DotNetCore_TASKS.Controllers
     [Route("api/test")]
     public class TestController : ControllerBase
     {
+        // middleware global exception handling
+        [HttpGet("middleware-test-error")]
+        public IActionResult TestError()
+        {
+            throw new Exception("Something went wrong!");
+        }
+        [HttpGet("NotFoundException")]
+        public IActionResult TestNotFound()
+        {
+            throw new NotFoundException("Order was not found.");
+        }
+        //
         [HttpGet("welcome")]
         public string Hello()
         {

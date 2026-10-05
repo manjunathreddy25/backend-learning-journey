@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using ASP_DotNetCore_TASKS.Exceptions;
+using System.Diagnostics;
+using System.Net;
 
 namespace ASP_DotNetCore_TASKS.Middleware
 {
@@ -20,7 +22,20 @@ namespace ASP_DotNetCore_TASKS.Middleware
             var stopwatch = Stopwatch.StartNew();
 
             Console.WriteLine("1. BEFORE _next");
-            await _next(context);
+
+            try
+            {
+                await _next(context);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(
+                    ex,
+                    "An unexpected error occurred.");
+
+                await HandleExceptionAsync(context, ex);
+            }
+
             Console.WriteLine("1. AFTER _next");
 
             stopwatch.Stop();
@@ -31,6 +46,39 @@ namespace ASP_DotNetCore_TASKS.Middleware
                 context.Request.Path,
                 stopwatch.ElapsedMilliseconds
             );
+        }
+
+        private static async Task HandleExceptionAsync(
+            HttpContext context,
+            Exception exception)
+        {
+            if (context.Response.HasStarted)
+            {
+                throw exception;
+            }
+            int statusCode;
+            string message;
+            if (exception is NotFoundException)
+            {
+                statusCode = 404;
+                message = exception.Message;
+            }
+            else
+            {
+                statusCode = 500;
+                message = "An unexpected error occurred.";
+            }
+
+            context.Response.StatusCode = statusCode;
+            context.Response.ContentType = "application/json";
+
+            var response = new
+            {
+                statusCode = statusCode,
+                message = message
+            };
+
+            await context.Response.WriteAsJsonAsync(response);
         }
     }
 }
