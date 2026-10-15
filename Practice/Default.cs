@@ -81,6 +81,11 @@ namespace Practice
             //var opt_result = Intersection.Optimized_FindIntersection(opt_dup_first, opt_dup_second);
             //Console.WriteLine(string.Join(", ", opt_result));
 
+            //int[] first = { 1, 2, 2, 3, 4 };
+            //int[] second = { 3, 4, 4, 5, 6 };
+            //HashSet<int> result = Union.FindUnion(first, second);
+            //Console.WriteLine(string.Join(", ", result));
+
 
 
         }

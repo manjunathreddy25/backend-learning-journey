@@ -1,6 +1,5 @@
 ﻿using ASP_DotNetCore_TASKS.Exceptions;
 using System.Diagnostics;
-using System.Net;
 
 namespace ASP_DotNetCore_TASKS.Middleware
 {
@@ -29,53 +28,46 @@ namespace ASP_DotNetCore_TASKS.Middleware
             }
             catch (Exception ex)
             {
-                _logger.LogError(
-                    ex,
-                    "An unexpected error occurred.");
+                _logger.LogError(ex, "An exception occurred.");
 
-                await HandleExceptionAsync(context, ex);
+                if (ex is NotFoundException)
+                {
+                    await HandleExceptionAsync(context, ex);
+                }
+                else
+                {
+                    throw;
+                }
             }
+            finally
+            {
+                stopwatch.Stop();
 
+                _logger.LogInformation(
+                    "Request {method} {path} took {time} ms",
+                    context.Request.Method,
+                    context.Request.Path,
+                    stopwatch.ElapsedMilliseconds
+                );
+            }
             Console.WriteLine("1. AFTER _next");
-
-            stopwatch.Stop();
-
-            _logger.LogInformation(
-                "Request {method} {path} took {time} ms",
-                context.Request.Method,
-                context.Request.Path,
-                stopwatch.ElapsedMilliseconds
-            );
         }
 
-        private static async Task HandleExceptionAsync(
-            HttpContext context,
-            Exception exception)
+        private static async Task HandleExceptionAsync(HttpContext context,Exception exception)
         {
             if (context.Response.HasStarted)
             {
-                throw exception;
-            }
-            int statusCode;
-            string message;
-            if (exception is NotFoundException)
-            {
-                statusCode = 404;
-                message = exception.Message;
-            }
-            else
-            {
-                statusCode = 500;
-                message = "An unexpected error occurred.";
+                throw new InvalidOperationException(
+                    "The response has already started.");
             }
 
-            context.Response.StatusCode = statusCode;
+            context.Response.StatusCode = StatusCodes.Status404NotFound;
             context.Response.ContentType = "application/json";
 
             var response = new
             {
-                statusCode = statusCode,
-                message = message
+                statusCode = StatusCodes.Status404NotFound,
+                message = exception.Message
             };
 
             await context.Response.WriteAsJsonAsync(response);

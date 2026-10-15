@@ -9,7 +9,6 @@ namespace ASP_DotNetCore_TASKS.Data
             : base(options)
         {
         }
-
         public DbSet<Order> Orders { get; set; }
     }
 }

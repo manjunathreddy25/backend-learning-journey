@@ -19,6 +19,11 @@ namespace ASP_DotNetCore_TASKS.Controllers
         {
             throw new NotFoundException("Order was not found.");
         }
+        [HttpGet("Unhandled Errors")]
+        public IActionResult PredefinedErrors()
+        {
+            throw new ArgumentException("ArgumentException");
+        }
         //
         [HttpGet("welcome")]
         public string Hello()
