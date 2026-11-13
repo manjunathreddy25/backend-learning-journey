@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Practice
 {
-    class Default
+    class Default 
     {
         public static void Main(string[] args)
         {
@@ -85,8 +85,6 @@ namespace Practice
             //int[] second = { 3, 4, 4, 5, 6 };
             //HashSet<int> result = Union.FindUnion(first, second);
             //Console.WriteLine(string.Join(", ", result));
-
-
 
         }
     }

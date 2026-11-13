@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ASP_DotNetCore_TASKS</name>
+    </assembly>
+    <members>
+        <member name="T:ASP_DotNetCore_TASKS.Controllers.RealEstateController">
+            <summary>
+            Provides version 1 endpoints for managing real estate properties.
+            </summary>
+        </member>
+        <member name="M:ASP_DotNetCore_TASKS.Controllers.RealEstateController.GetAllProperties">
+            <summary>
+            Retrieves all v1 real estate properties.
+            </summary>
+        </member>
+        <member name="T:ASP_DotNetCore_TASKS.Controllers.RealEstateV2Controller">
+            <summary>
+            Provides version 2 endpoints for managing real estate properties.
+            </summary>
+        </member>
+        <member name="M:ASP_DotNetCore_TASKS.Controllers.RealEstateV2Controller.GetProperties(System.String,System.String,System.Nullable{System.Decimal},System.Nullable{System.Decimal})">
+            <summary>
+            Retrieves all v2 real estate properties.
+            Supports city, property type, and price filtering
+            </summary>
+        </member>
+        <member name="T:ASP_DotNetCore_TASKS.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:ASP_DotNetCore_TASKS.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ASP_DotNetCore_TASKS.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ASP_DotNetCore_TASKS.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
